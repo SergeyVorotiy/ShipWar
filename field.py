@@ -41,9 +41,13 @@ class Board:
             printed_field += "\n|-----|-----|-----|-----|-----|-----|-----|\n"
             k += 1
         print(printed_field)
-    def out(self,dot):
+    def out(self, dot):
+
         if 0 < dot[0] < 7 and 0 < dot[1] < 7:
-            return False
+            if dot in self.ships.dots and dot in self._contour_points:
+                return True
+            else:
+                return False
         else:
             return True
     def shot(self, dot):

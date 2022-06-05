@@ -14,7 +14,7 @@ class Player:
     def move(self):
         dot = self.ask()
         try:
-            _it_hit = self.player_board.shot(dot)
+            _it_hit = self.opponent_board.shot(dot)
         except BordOutExeption("Ход за пределы поля") as e:
             print("Не туда")
             return True
@@ -46,4 +46,3 @@ class AI(Player):
                 self._dots.append(dot)
                 is_correct = False
                 return dot
-            
